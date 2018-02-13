@@ -1,0 +1,84 @@
+-------------------
+Pentru automatizare
+-------------------
+vagrant up
+vagrant ssh control_main
+ansible-playbook /ansible_code/control.yml
+ansible-playbook /ansible_code/site.yml -i hosts
+
+
+
+---------
+Vagrant :
+---------
+vagrant init
+
+vagrant up
+
+vagrant ssh [vm_name]
+vagrant ssh control_main
+
+vagrant status
+
+vagrant destroy -f [vm_name]
+
+-------
+Linux :
+-------
+sudo cp /ansible_code/dev /etc/ansible/
+sudo cp -avr /ansible_code/playbooks /etc/ansible/
+
+sudo cp /ansible_code/loadbalancer.yml /etc/ansible/loadbalancer.yml
+
+wget -qO- http://lb01 | less
+
+which curl
+
+curl lb01
+
+clear
+
+curl app01
+
+curl app01/db
+
+hostname -I
+
+wget http://ipecho.net/plain -O - -q ; echo
+89.238.251.138
+
+---------
+Ansible :
+---------
+
+ansible-playbook site.yml -i hosts
+
+ansible --list-hosts all
+ansible --list-hosts "*"
+ansible --list-hosts loadbalancer
+ansible --list-hosts webserver
+ansible --list-hosts webserver[0]
+ansible --list-hosts db01
+ansible --list-hosts "app0*"
+ansible --list-hosts database:control
+
+ansible --version
+
++ Tasks / Commands :
+ansible -m ping all
+ansible -m command -a "hostname" all
+ansible -a "hostname" all
+
++ Playbook Execution
+ansible-playbook playbooks/hostname.yml
+
+ansible-playbook loadbalancer.yml
+
+ansible-playbook webserver.yml
+
+ssh app01
+ls -al /etc/apache2/
+ls -al /etc/apache2/sites-available/
+logout
+
+ansible -a "netstat -an" db01
