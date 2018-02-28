@@ -1,9 +1,10 @@
 # tasks file for webserver
 ---
-- name: ensure apache is installed
+- name: ensure apache and python are installed
   apt: name={{item}} state=present update_cache=yes
   with_items:
     - apache2
+    - python
 
 - name: ensure apache is running
   service: 

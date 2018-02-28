@@ -82,3 +82,5 @@ ls -al /etc/apache2/sites-available/
 logout
 
 ansible -a "netstat -an" db01
+================================================================
+Jenkins password : 5e7c9e89b83040dbb29a11fc35f0bf22
