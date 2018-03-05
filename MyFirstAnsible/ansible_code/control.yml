@@ -1,5 +1,0 @@
----
-- hosts: control_main
-  become: true
-  roles:
-    - control  
