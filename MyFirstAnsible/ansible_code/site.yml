@@ -1,6 +1,0 @@
----
-- name: deploy static html
-  hosts: mywebserver
-  become: yes
-  roles:
-   - webserver
