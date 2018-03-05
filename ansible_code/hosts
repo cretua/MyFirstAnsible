@@ -1,4 +1,4 @@
-# mywebserver ansible_user=vagrant ansible_ssh_private_key=~/.ssh/id_rsa
+mywebserver ansible_user=vagrant ansible_ssh_private_key=~/.ssh/id_rsa
 
 [webserver]
 mywebserver

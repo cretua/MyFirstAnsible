@@ -21,7 +21,7 @@ Vagrant.configure(2) do |config|
     
 	h.vm.hostname = "controlmain"
 	
-	h.vm.provision "shell", path: "provisioners/install_tools.sh"
+	h.vm.provision "shell", path: "provisioners/install_tools_control.sh"
   h.vm.provision :shell, :inline => <<'EOF'
 	
 if [ ! -f "/home/vagrant/.ssh/id_rsa" ]; then
@@ -44,7 +44,8 @@ EOF
   config.vm.define "my_webserver" do |h|
     h.vm.network "private_network", ip: "192.168.135.114"
     h.vm.provision :shell, inline: 'cat /vagrant/control.pub >> /home/vagrant/.ssh/authorized_keys'
-	h.vm.hostname = "mywebserver"
+    h.vm.provision "shell", path: "provisioners/install_tools_webserver.sh"
+    h.vm.hostname = "mywebserver"
   end
  
 end
