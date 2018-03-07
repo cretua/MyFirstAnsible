@@ -7,7 +7,7 @@ pipeline
 		{
 			steps
 			{
-				dir('/var/lib/jenkins/ansible/MyFirstAnsible/ansible_code') 
+				dir('ansible_code') 
 				{
 					sh 'ansible-playbook site.yml -i hosts'    
 				}
